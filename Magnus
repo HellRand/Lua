@@ -17,7 +17,7 @@ function magnus.OnUpdate()
 	 
 	local ultimate = NPC.GetAbilityByIndex(myHero,3)
 	if ultimate == nill or not Ability.IsReady(ultimate) then return end
-	local enemies = NPC.GetHeroesInRadius(myHero, 3500, Enum.TeamType.TEAM_ENEMY)
+	local enemies = NPC.GetHeroesInRadius(myHero, 1500, Enum.TeamType.TEAM_ENEMY)
 	
 	local count = 0;
     local point = {}
