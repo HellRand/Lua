@@ -9,15 +9,16 @@ Axe.staffEnable = Menu.AddOption({"Hero Specific", "Axe"}, "Use Force Staff[BETA
 function Axe.OnUpdate()
 if not Menu.IsEnabled(Axe.optionEnable) then return true end
 if not Menu.IsKeyDown(Axe.optionKey) then return end
+local myHero = Heroes.GetLocal()
+
+if NPC.GetUnitName(myHero) ~= "npc_dota_hero_axe" then return end
 Axe.ITABcombo()
 end
 
 function Axe.ITABcombo()
 
 
-local myHero = Heroes.GetLocal()
 
-if NPC.GetUnitName(myHero) ~= "npc_dota_hero_axe" then return end
 local hero = Input.GetNearestHeroToCursor(Entity.GetTeamNum(myHero), Enum.TeamType.TEAM_ENEMY) --!
 if not hero then return end
 
