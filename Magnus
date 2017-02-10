@@ -170,7 +170,7 @@ local lotus = NPC.GetItem(myHero, "item_lotus_orb", true)
 	end
 
 	
-	if ult  and Ability.IsCastable(ult, myMana) then 
+	if ult and NPC.IsPositionInRange(myHero, pos, 410, 0)  and Ability.IsCastable(ult, myMana) then 
 	Ability.CastNoTarget(ult, true)
     end
 	if sviva and  Ability.IsCastable(sviva, myMana) then Ability.CastNoTarget(sviva)   end
